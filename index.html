@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.min.js"></script>
+    <title>RA com imagens</title>
+  </head>
+  <body style="margin: 0px; overflow: hidden">
+    <a-scene vr-mode-ui="enabled: false" embedded arjs="debugUIEnabled: false">
+      <a-assets>
+        <a-asset-item src="assets/antique_globe_new.glb" id="globo"></a-asset-item>
+      </a-assets>
+
+      <a-marker type="pattern" url="assets/pattern-Javascript-logo.patt">
+        <a-entity 
+        gltf-model="#globo" 
+        scale="2 2 2"
+        position="0 0.5 0"
+        rotation="0 0 0"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity>
+      </a-marker>
+
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
